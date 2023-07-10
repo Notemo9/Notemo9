@@ -1,0 +1,2 @@
+provide和inject
+provide('key',函数的名字或者变量) // 注意点就是传值的时候不能有加.value  这样传过去的不是响应式数据
