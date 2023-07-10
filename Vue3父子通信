@@ -1,0 +1,31 @@
+父传子通信
+// script标签中使用父组件传递过来的数据需要接收defineProps的对象结果
+// 模板结构中直接使用
+const res= defineProps({
+  id:{
+    type:Number,
+    default:0
+  }
+})
+console.log(res.id);
+
+子传父
+    const emits=defineEmits(['自定义事件名字'])
+    <!-- $event 在子传父的时候表示的是子组件传递过来的数据  且是单一数据的情况下-->
+    <div><Son :id="id" :money="money" @update-money="money=$event"></Son></div>
+
+
+ref访问组件和dom元素
+// vue3中操作DOM
+// 1.创建一个空的 ref对象// 2.和模板结构进行关联
+// 3.组件挂载完毕后 .value访问dom元素
+const docment=ref(null)
+const son=ref(null)
+onMounted(()=>{
+console.log(docment.value);
+console.log(son.value);
+})
+// 使用defineExpose 暴露的数据和方法，才能被父组件通过 ref的方式 访问到
+defineExpose({
+  //子组件里面的方法或者数据
+})
