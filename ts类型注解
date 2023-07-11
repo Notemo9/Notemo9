@@ -1,0 +1,37 @@
+// ts 类型注解
+// 已有类型的简单类型数字 字符串 布尔值null undefined
+// 数字类型
+let x: number 
+x=20
+// 字符串类型
+let s:string 
+s='hello'
+// 布尔类型
+let b:boolean
+b=true
+// null类型
+let n:null=null
+n=null
+// undefined类型
+let a:undefined=undefined
+a=undefined
+
+// 为数组添加类型注解
+// 1. 限制数组元素的类型
+// 2.做方法的提示
+
+// 需求1: 定义一个存储纯数字的数组
+// 方式一：推荐
+let arr:number[]=[1,2,3]
+// arr.forEach(item=>item.toFixed(2))
+// 方式二：泛型
+let arr1:Array<number>=[1,2,3]
+
+// 需求2: 定义一个存储纯字符串的数组
+
+let arr2:string[]=['a','b','c']
+let arr3:Array<string>=['a','b','c']
+
+
+
+
