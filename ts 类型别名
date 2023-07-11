@@ -1,0 +1,19 @@
+// 需求: 定义一个变量 既能存储数字,也能存储布尔值，也能存储字符申
+// 联合类型 :将多个类型组合成一个新的类型
+// let 变量: 类型类型 类型
+// let param: numberstring = 18
+let param: number | string = 18
+param='18'
+
+// 需求: 要求一个数组 既能存储数字 也能存字符串 也能存储布尔值
+let arrr1:(number|string|boolean)[]=[1,2,3,'4',6,true]
+let arrr2:(number|string|boolean)[]=[1,2,3,'4',6,true]
+let arrr3:(number|string|boolean)[]=[1,2,3,'4',6,true]
+// 类型别名
+type MyType=(number|string|boolean)[]
+let arrr4:MyType=[1,2,3,'4',6,true]
+let arrr5:MyType=[1,2,3,'4',6,true]
+let arrr6:MyType=[1,2,3,'4',6,true]
+
+//泛型
+let arrr7:Array<number|string|boolean>=[1,2,3,'4',6,true]
