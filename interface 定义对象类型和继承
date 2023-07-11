@@ -1,0 +1,84 @@
+//  interface 定义对象类型
+import axios from 'axios'
+
+interface MyTypes {
+    name: string,
+    age: number,
+    mobile: string,
+    weigth?: number,
+    height?: number,
+    tel: string,
+    run?: () => void
+}
+
+const boj: MyTypes = {
+    name: 'zs',
+    age: 10,
+    mobile: '13888888888',
+    weigth: 10,
+    height: 10,
+    tel: '起飞',
+    run: () => {
+        console.log('我能开飞机');
+    }
+}
+const boj1: MyTypes = {
+    name: 'hjf',
+    age: 10,
+    mobile: '10',
+    tel: '10',
+}
+
+// https://apipc-xiaotuxian-front.itheima.net/home/banner
+
+interface ListType {
+    id: string,
+    imgUrl: string,
+    hrefUrl: string,
+    type: string
+}
+
+
+
+// 接口的继承
+let list: ListType[] = []
+const getList = async () => {
+    const { data } = await axios('https://apipc-xiaotuxian-front.itheima.net/home/banner')
+    list=data.result
+    console.log(list);
+}
+getList()
+list.forEach(item =>item.type)
+
+
+interface AddRoom {
+    id: string;
+    point: string;
+    building: string;
+    room: string;
+    name: string;
+    gender: number;
+    mobile: string;
+    idcardFrontUrl: string;
+    idcardBackUrl: string;
+    status: string;
+  }
+  // 以上定义的接口类型 有 重复的信息 可以使用继承来实现 extends
+
+  interface MyRoom extends AddRoom{
+    status:number
+  }
+
+  const MyRoom:MyRoom={
+    id:'10',
+    point:'10',
+    building:'10',
+    room:'10',
+    name:'10',
+    gender:10,
+    mobile:'10',
+    idcardFrontUrl:'10',
+    idcardBackUrl:'10',
+    status:10,
+  }
+
