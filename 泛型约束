@@ -1,0 +1,27 @@
+//泛型约束
+type ILength={
+    length:number
+}
+const LogLength=<t extends ILength >(a:t)=>{
+        console.log(a.length)
+}
+
+
+ //类型收窄
+const LogLength1=<t>(a:t)=>{
+    //类型收窄
+    if(typeof a==='string' || a instanceof Array){
+        console.log(a.length)
+    }
+    
+}
+LogLength([1,2,3])
+LogLength('dasd')
+LogLength(1)
+LogLength({})
+
+
+LogLength1([1,2,3])
+LogLength1('dasd')
+LogLength1(1)
+LogLength1({})
