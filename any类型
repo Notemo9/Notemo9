@@ -1,0 +1,24 @@
+// any类型:将数据的类型设置为any(特殊的类型)，失去ts对类型的检查 保护，不会有类型错误提示，属性方法的提示
+ let ress:any ={}
+ ress=6
+ ress='47'
+ ress=true
+ ress=undefined
+ ress=null
+ ress=Symbol()
+//可以随便赋值
+
+ const fn=(d:any)=>{
+    d=6
+ }
+ fn()
+ // 使用场景:
+//对某些数据的类型不够明确，暂且使用any类型，等后期明确了对应的类型后,再修改any类型// 为第三包做ts支持的时候，也会用到any
+// any是一种讽刺，anyscript
+ 
+
+
+// 需求: 写一个数组只能存储两个数字 做类型
+// 元组类型
+let resData:[number,number]=[1,2]
+resData.push(1)
