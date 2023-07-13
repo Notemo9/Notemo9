@@ -1,0 +1,52 @@
+//type 定义数据类型
+type UserType = {
+    money: number;
+    name: string;
+};
+type NewUserType = {
+    width: number;
+    age: number;
+} & UserType; // type 可以使用 & 模拟继承 交叉
+
+let res: NewUserType = {
+    name: '小明',
+    money: 1000,
+    width: 100,
+    age: 18,
+};
+
+// interface vs type
+// 1.相同点:
+// 1.1.都可定义对象类型
+// 1.2 都可实现继承 interface使用extends type使用 &
+// 不同点:
+// 1.1.type 不仅可以描述对象 还可以定义别的类型
+// 1.2 同名的interface会合并(同名的属性类型不一致会报错)，同名的type会报错// type MyArrType = (string  number l boolean)[]
+interface MyUserType {
+    name: string;
+    age: number;
+    score: number;
+}
+
+// 同名的interface会合并
+interface MyUserType {
+    type: string;
+}
+let res1: MyUserType = {
+    name: 'dasd',
+    age: 18,
+    score: 1564,
+    type: 'nuber',
+};
+
+type MyUserType1 = {
+    name: string;
+    age: number;
+    score: number;
+};
+//会报错↓
+// type MyUserType1={
+//     name:string
+//     age:number
+//     score:number
+// }
