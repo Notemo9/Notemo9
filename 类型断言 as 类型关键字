@@ -1,0 +1,16 @@
+//报错，如果出错 和ts无关
+//类型断言: 有时候我们比ts更明确数据的类型，如果做了类型断言 欺骗ts编译器，但是无法避免运行时的报错
+// as 类型关键字
+
+
+const link= document.querySelector('#link') as HTMLAnchorElement
+console.log(link.href);
+
+function log(a:number|string){
+    console.log(a);
+    console.log((a as number).toFixed(2));
+}
+log('2')
+
+// 练习: 获取页面中id为avatar的图象的标签，打印它的src属性值
+document.querySelector('#avatar')
