@@ -1,0 +1,52 @@
+// 多个泛型
+type MyType1<T1,T2>={
+    status:number
+    msg:string
+    data:T1
+    info:T2
+}
+
+// 一↓
+type MyT1= {id:number,name:string}[]
+type MyT2= {name:string,age:number}
+const oo:MyType1<MyT1,MyT2>={
+    status:1001,
+    msg:'1001',
+    data:[
+        {id:1,name:'1'},
+        {id:1,name:'1'}
+    ],
+    info:{name:'1',age:18}
+}
+
+type MyT3= {price:number,sign:string}
+type MyT4= (number|string|boolean)[]
+const OO2:MyType1<MyT3,MyT4>={
+    status:1001,
+    msg:'1001',
+    data:{price: 100,sign:'小米'},
+    info:[1,2,3,'4',true]
+}
+
+
+// 函数泛型
+//需求:设置一个函数 函数中有两个参数 参数1是一个数字，参数2意，函数的返回值是一个数组 数组长度是参数1，数组元素是参数2
+
+const createArray=<T>(length:number,value:T)=>{
+    const arr=[]
+    for(let i=0;i<length;i++){
+        arr.push(value)
+    }
+    return arr
+}
+// createArray(6,'10').forEach(item=>item)
+// createArray(6,100).forEach(item=>item)
+// createArray(6,[100]).forEach(item=>item)
+
+
+// 需求:定义一个函数，函数接收一个参数(参数类型是包含了两项子元素的数组)，将两个元素调换位置并返回一个数组
+const swapArray=<T,U>(arr:[T,U]):[U,T]=>{
+    return [arr[1],arr[0]]
+}
+swapArray([1,'5'])
+swapArray([true,1])
