@@ -1,0 +1,46 @@
+// 泛型
+interface MyTypes<T>{
+    code: number
+    msg: string
+    data:T
+}
+
+const o:MyTypes<number>={
+    code:1,
+    msg:'success',
+    data:10
+}
+const o1:MyTypes<{name:string,money:number,width:number,age:number}>={
+    code:1,
+    msg:'success',
+    data:{
+        name: '小明',
+        money: 1000,
+        width: 100,
+        age: 18,
+    }
+}
+const o2:MyTypes<{name:string,money:number,width:number,age:number}[]>={
+    code:1,
+    msg:'success',
+    data:[{
+        name: '小明',
+        money: 1000,
+        width: 100,
+        age: 18,
+    }
+]
+}
+
+type Hae ={name:string,money:number,width:number,age:number}[]
+const o3:MyTypes<Hae>={
+    code:1,
+    msg:'success',
+    data:[{
+        name: '小明',
+        money: 1000,
+        width: 100,
+        age: 18,
+    }
+]
+}
