@@ -1,0 +1,26 @@
+// 字面量类型:将值当做类型
+// count 是number类型 可以赋值任何数字
+let count:number =100
+count=1 
+count=2 
+
+// num的类型是 100 只能赋值为100
+let num :100= 100
+
+// 使用场景配合的联合类型      字面量联合类型
+let gender:'男'|'女'='男'
+gender='女'
+
+// 值只能是1-5
+let score:1|2|3|4|5 = 1
+score = 2
+score = 3
+// 报错↓
+// score = 6
+
+// 上下位置切换函数
+type Dir='top'|'bottom'|'left'|'right'
+let changeDir=(idr:Dir)=>{
+    console.log(idr);
+}
+changeDir('bottom')
