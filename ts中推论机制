@@ -1,0 +1,15 @@
+// ts中内置了一套推论机制，实际开发中 可以巧妙的使用 推论机制 提升开发效率
+// 1.在声明变量并赋值的时候会进行推论
+// 2。在使用函数的时候 会推论返回值
+let boj=[
+  'name','zs',
+  'age','18']
+  // 类型“number”的参数不能赋给类型“string”的参数↓
+    // boj.push(1)
+
+function add(a:number,b:number){
+  return a+b
+}
+function add1(a:boolean,b:number){
+  return a+b
+}
